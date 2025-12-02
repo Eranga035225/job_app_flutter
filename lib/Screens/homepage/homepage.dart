@@ -27,14 +27,32 @@ class _HomePageState extends State<HomePage> {
                 color: Colors.grey,
                 
               ),),
+              SizedBox(height: 10,),
               Text('Find Your\nCreative Job', style: TextStyle(
                 fontSize: 32,
+                height: 0.9,
                 fontWeight: FontWeight.bold
               ),),
 
-              SizedBox(height: 15),
+              SizedBox(height: 10),
 
-              
+              // Row(children: [
+              //   Expanded(
+              //     child: TextField(
+                    
+              //     ),
+              //   ),
+              //   Container(
+              //     width: 50,
+              //     height: 50,
+              //     decoration: BoxDecoration(
+
+              //     ),
+              //   )
+
+              // ],)
+
+
 
 
 
