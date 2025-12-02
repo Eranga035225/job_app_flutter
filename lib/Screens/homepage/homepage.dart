@@ -14,17 +14,21 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Colors.grey.shade300,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Row(children: [
             Container(
               width: 50, 
               height: 50,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(15),
+                border: Border.all(
+                  color: Colors.grey.shade400,
+                )
           
           
               ),
+              child: Icon(Icons.menu, color: Colors.grey.shade800,)
           
             )
           
