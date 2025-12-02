@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: SafeArea(
@@ -34,23 +35,27 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold
               ),),
 
-              SizedBox(height: 10),
+              SizedBox(height: 20),
 
-              // Row(children: [
-              //   Expanded(
-              //     child: TextField(
-                    
-              //     ),
-              //   ),
-              //   Container(
-              //     width: 50,
-              //     height: 50,
-              //     decoration: BoxDecoration(
+              SizedBox(
+                width: size.width  * 0.6,
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search for jobs',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide.none,
+                    ),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    prefixIcon: Icon(Icons.search, color: Colors.grey),
+                  ),
+                )
+              )
 
-              //     ),
-              //   )
-
-              // ],)
+              
+            
 
 
 
