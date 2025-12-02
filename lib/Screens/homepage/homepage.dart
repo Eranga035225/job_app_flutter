@@ -30,28 +30,46 @@ class _HomePageState extends State<HomePage> {
               ),),
               SizedBox(height: 10,),
               Text('Find Your\nCreative Job', style: TextStyle(
-                fontSize: 32,
+                fontSize: 30,
                 height: 0.9,
                 fontWeight: FontWeight.bold
               ),),
 
               SizedBox(height: 20),
 
-              SizedBox(
-                width: size.width  * 0.6,
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search for jobs',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide.none,
-                    ),
-                    filled: true,
-                    fillColor: Colors.white,
-                    contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                    prefixIcon: Icon(Icons.search, color: Colors.grey),
+              Row(
+                children: [
+                  SizedBox(
+                    width: size.width  * 0.79,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search For Jobs',
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none,
+                        ),
+                        filled: true,
+                        fillColor: Colors.white,
+                        contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                        prefixIcon: Icon(Icons.search, color: Colors.grey),
+                      ),
+                    )
                   ),
-                )
+                  
+                  Spacer(),
+
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      borderRadius: BorderRadius.circular(12)
+
+
+                    ),
+                    child: Icon(Icons.filter_list, color: Colors.white,),
+                  )
+                ],
               )
 
               
