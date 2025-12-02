@@ -13,13 +13,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: Colors.grey.shade200,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(),
+              SizedBox(height: 15,),
+              Text('Good Morning Era', style: TextStyle(
+                fontSize: 17,
+                color: Colors.grey,
+                
+              ),),
+              Text('Find Your\nCreative Job', style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold
+              ),),
+
+              SizedBox(height: 15),
+
+              
 
 
 
