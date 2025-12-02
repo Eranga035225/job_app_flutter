@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_app_flutter/Screens/splash_screen.dart';
 
 import 'Screens/homepage/homepage.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
      
-      home: HomePage(), 
+      home: SplashScreen(), 
     );
   }
 }
