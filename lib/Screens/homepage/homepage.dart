@@ -11,12 +11,26 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(children: [
-        Container(
+      backgroundColor: Colors.grey.shade300,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(children: [
+            Container(
+              width: 50, 
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
           
-        )
-
-      ],)
+          
+              ),
+          
+            )
+          
+          ],),
+        ),
+      )
       
 
 
