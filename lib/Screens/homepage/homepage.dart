@@ -15,46 +15,55 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
             children: [
-            Container(
-              width: 50, 
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(
-                  color: Colors.grey.shade400,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                Container(
+                  width: 50, 
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                      color: Colors.grey.shade400,
+                    )
+              
+              
+                  ),
+                  child: Icon(Icons.menu, color: Colors.grey.shade800,)
+              
+                ),
+                Text('Creative Jobs', style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold
+                  ),
+                ),
+              
+                Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                      color: Colors.grey.shade400,
+                    )
+                  ),
+                  child: Icon(Icons.person, color: Colors.grey.shade800,),
+              
+                  
                 )
-          
-          
-              ),
-              child: Icon(Icons.menu, color: Colors.grey.shade800,)
-          
-            ),
-            Text('Creative Jobs', style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold
-              ),
-            ),
-
-            Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-                border: Border.all(
-                  color: Colors.grey.shade400,
-                )
-              ),
-              child: Icon(Icons.person, color: Colors.grey.shade800,),
+              
+              ],),
 
               
-            )
-          
-          ],),
+
+
+
+            ],
+          ),
           
       )
       
