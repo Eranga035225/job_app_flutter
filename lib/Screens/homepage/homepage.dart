@@ -68,8 +68,40 @@ class _HomePageState extends State<HomePage> {
 
                     ),
                     child: Icon(Icons.filter_list, color: Colors.white,),
-                  )
+                  ),
+
+                  
+
+
+
                 ],
+              ),
+              SizedBox(height: 10),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                Text('Popular Jobs', style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),),
+                Text('Show All', style: TextStyle(fontSize: 15, color: Colors.grey.shade700),),
+              ],),
+
+              SizedBox(height: 10),
+              Container(
+                padding : EdgeInsets.all(8),
+                width: size.width * 0.75,
+                height: size.width * 0.5,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(20)
+                ),
+              child: Column(children: [
+                Row(children: [
+                  Text('Senior Software Engineer', style: TextStyle(fontSize: 16, color: Colors.white, fontWeight: FontWeight.w600),),
+                  Spacer(),
+                  Icon(Icons.bookmark_border, color: Colors.grey.shade700,),
+                ],)
+              ],)
               )
 
               
