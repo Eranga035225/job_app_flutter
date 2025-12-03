@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                                 child: GestureDetector(
                                   onTap: (){
 
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => JobView()));
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => JobView(job: job)));
                                   },
                                   child: Container(
                                         padding : EdgeInsets.all(30),

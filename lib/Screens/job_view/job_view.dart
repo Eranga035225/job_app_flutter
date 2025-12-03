@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 
+import '../../models/job_model.dart';
+
 class JobView extends StatefulWidget {
-  const JobView({super.key});
+  final JobModel job; // <-- incoming job
+
+  const JobView({super.key, required this.job});
 
   @override
   State<JobView> createState() => _JobViewState();
 }
 
 class _JobViewState extends State<JobView> {
+  
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size; 
@@ -52,8 +57,16 @@ class _JobViewState extends State<JobView> {
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15))
 
             ),
-            child: Container(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(widget.job.title, style:TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
               
+                ],
+              
+              ),
             )
 
           )
