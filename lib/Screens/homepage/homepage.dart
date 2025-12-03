@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:job_app_flutter/services/get_data.dart';
 
+import '../job_view/job_view.dart';
 import 'widgets/app_bar/app_bar.dart';
 import 'widgets/search_bar.dart';
 
@@ -63,74 +64,80 @@ class _HomePageState extends State<HomePage> {
                       var job  = data.getJobData()[index];
                       return Padding(
                                 padding: const EdgeInsets.all(4.0),
-                                child: Container(
-                                      padding : EdgeInsets.all(30),
-                                      width: size.width * 0.75,
-                                      height: size.width * 0.5,
-                                          decoration: BoxDecoration(
-                                          color:index == 0 ? Colors.black : Colors.white,
-                                          borderRadius: BorderRadius.circular(20)
-                                                            ),
-                                              child: Column(children: [
-                                                  Row(children: [
-                                                      Text(job.title, style: TextStyle(fontSize: 16, color: index == 0 ? Colors.white : Colors.black, fontWeight: FontWeight.w600),),
-                                                      Spacer(),
-                                                      Icon(Icons.bookmark_border, color: Colors.grey.shade700,),
-                                                            ],),
-            
-            
-                                                  Row(children: [
-                                                     Text(job.salary, style: TextStyle(fontSize: 15, color: Colors.grey.shade700, fontWeight: FontWeight.w600),),
-                                                     SizedBox(width: 17,),
-                                                     Container(
-                                                      padding: EdgeInsets.all(3),
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.grey.shade700,
-                                                        borderRadius: BorderRadius.circular(10)
-            
-                                                      ),child: Text(job.type, style: TextStyle(
-                                                        color: Colors.grey.shade300,
-            
-                                                      ))
-            
-            
-                                                     )
-            
-                                                  ],),
-                                                  Spacer(),
-            
-                                                  Row(children: [
-                                                    Container(
-                                                      width: 60,
-                                                      height: 60,
-                                                      decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        borderRadius: BorderRadius.circular(10),
-                                                        image: DecorationImage(image: NetworkImage(job.companyLogo), fit: BoxFit.contain)
+                                child: GestureDetector(
+                                  onTap: (){
+
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => JobView()));
+                                  },
+                                  child: Container(
+                                        padding : EdgeInsets.all(30),
+                                        width: size.width * 0.75,
+                                        height: size.width * 0.5,
+                                            decoration: BoxDecoration(
+                                            color:index == 0 ? Colors.black : Colors.white,
+                                            borderRadius: BorderRadius.circular(20)
+                                                              ),
+                                                child: Column(children: [
+                                                    Row(children: [
+                                                        Text(job.title, style: TextStyle(fontSize: 16, color: index == 0 ? Colors.white : Colors.black, fontWeight: FontWeight.w600),),
+                                                        Spacer(),
+                                                        Icon(Icons.bookmark_border, color: Colors.grey.shade700,),
+                                                              ],),
+                                              
+                                              
+                                                    Row(children: [
+                                                       Text(job.salary, style: TextStyle(fontSize: 15, color: Colors.grey.shade700, fontWeight: FontWeight.w600),),
+                                                       SizedBox(width: 17,),
+                                                       Container(
+                                                        padding: EdgeInsets.all(3),
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.grey.shade700,
+                                                          borderRadius: BorderRadius.circular(10)
+                                              
+                                                        ),child: Text(job.type, style: TextStyle(
+                                                          color: Colors.grey.shade300,
+                                              
+                                                        ))
+                                              
+                                              
+                                                       )
+                                              
+                                                    ],),
+                                                    Spacer(),
+                                              
+                                                    Row(children: [
+                                                      Container(
+                                                        width: 60,
+                                                        height: 60,
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius: BorderRadius.circular(10),
+                                                          image: DecorationImage(image: NetworkImage(job.companyLogo), fit: BoxFit.contain)
+                                                          
+                                                        )
+                                                        ),
+                                                        SizedBox(width: 10,),
+                                                        Column(
+                                                         
+                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                          children: [
+                                                          Text(job.companyName, style: TextStyle(fontSize: 16, color: index==0 ? Colors.white : Colors.black, fontWeight: FontWeight.w600),),
+                                                          Text(job.city, style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w600),),
+                                                          SizedBox(width: 40,)
+                                                        ],),
+                                                        Spacer(),
+                                                        Text(job.time, style: TextStyle(fontSize: 14, color: Colors.red, fontWeight: FontWeight.w600),),
                                                         
-                                                      )
-                                                      ),
-                                                      SizedBox(width: 10,),
-                                                      Column(
-                                                       
-                                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                        Text(job.companyName, style: TextStyle(fontSize: 16, color: index==0 ? Colors.white : Colors.black, fontWeight: FontWeight.w600),),
-                                                        Text(job.city, style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w600),),
-                                                        SizedBox(width: 40,)
-                                                      ],),
-                                                      Spacer(),
-                                                      Text(job.time, style: TextStyle(fontSize: 14, color: Colors.red, fontWeight: FontWeight.w600),),
+                                                        
                                                       
-                                                      
-                                                    
-                                                  ],)
-            
-            
-            
-            
-                                                          ],)
-                                                          ),
+                                                    ],)
+                                              
+                                              
+                                              
+                                              
+                                                            ],)
+                                                            ),
+                                ),
                       );
                   
                   
