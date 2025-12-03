@@ -22,11 +22,11 @@ class CustomAppBar extends StatelessWidget {
     
     
         ),
-        child: Icon(Icons.menu, color: Colors.grey.shade800,size:28)
+        child: Icon(Icons.menu, color: Colors.grey.shade800,size:26)
     
       ),
       Text('Creative Jobs', style: TextStyle(
-      fontSize: 24,
+      fontSize: 22,
       fontWeight: FontWeight.bold
         ),
       ),
@@ -41,7 +41,7 @@ class CustomAppBar extends StatelessWidget {
             color: Colors.grey.shade400,
           )
         ),
-        child: Icon(Icons.person, color: Colors.grey.shade800,size: 28),
+        child: Icon(Icons.person, color: Colors.grey.shade800,size: 26),
     
         
       )

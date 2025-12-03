@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -33,7 +34,7 @@ class _HomePageState extends State<HomePage> {
                 ),),
                 SizedBox(height: 10,),
                 Text('Find Your\nCreative Job', style: TextStyle(
-                  fontSize: 30,
+                  fontSize: 28,
                   height: 0.9,
                   fontWeight: FontWeight.bold
                 ),),
@@ -188,16 +189,31 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(height: 10),
                 Column(children: [
                   ... List.generate(data.getJobData().length, (index){
-                    return Container(
-                      height: 80,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15)
+                    var job  = data.getJobData()[index];
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: 80,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15)
+                        ),
+                        child: ListTile(
+                          leading:  Container(
+                                                 width: 60,
+                                                        height: 60,
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius: BorderRadius.circular(10),
+                                                          image: DecorationImage(image: NetworkImage(job.companyLogo), fit: BoxFit.contain)
+                                                          
+                                                        )
+                                                        ),
+                          
+                          
+                        )
+                                  
                       ),
-                      child: ListTile(
-                        
-                      )
-            
                     );
                    
             
