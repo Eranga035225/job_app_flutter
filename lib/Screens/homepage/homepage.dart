@@ -86,9 +86,9 @@ class _HomePageState extends State<HomePage> {
                 Text('Show All', style: TextStyle(fontSize: 15, color: Colors.grey.shade700),),
               ],),
 
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               Container(
-                padding : EdgeInsets.all(8),
+                padding : EdgeInsets.all(15),
                 width: size.width * 0.75,
                 height: size.width * 0.5,
                 decoration: BoxDecoration(
