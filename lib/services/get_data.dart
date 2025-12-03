@@ -2,7 +2,7 @@ import '../models/job_model.dart';
 
 class GetData {
   List<JobModel> getJobData() {
-    return [
+    List<JobModel> jobs = [
       JobModel(
         title: 'Senior Software Engineer',
         salary: 'LKR 420,000 / month',
@@ -62,7 +62,63 @@ class GetData {
         ],
       ),
 
-      // Add other jobs similarly...
+      JobModel(
+        title: 'UI/UX Designer',
+        salary: 'LKR 150,000 / month',
+        companyName: 'DesignCraft',
+        companyLogo: 'https://th.bing.com/th/id/OIP.8Lq-yFA7zKRldnTS2tE8YwAAAA?w=168&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
+        city: 'Colombo',
+        type: 'Remote',
+        time: '10 days left',
+        aboutCompany: 'DesignCraft is a creative agency delivering modern UI/UX solutions for web and mobile apps.',
+        description: 'Hiring a UI/UX Designer familiar with Figma, Adobe XD, and modern design trends. '
+            'You will be responsible for creating wireframes, prototypes, and high-fidelity mockups while collaborating with frontend developers. '
+            'DesignCraft offers flexible working hours and a creative environment.',
+        reviews: [
+          JobReview(username: 'Hannah', rating: 4.3, comment: 'Excellent creative freedom.'),
+          JobReview(username: 'Ian', rating: 4.1, comment: 'Supportive team and good work-life balance.'),
+        ],
+      ),
+
+      JobModel(
+        title: 'Mobile App Developer',
+        salary: 'LKR 260,000 / month',
+        companyName: 'AppVenture',
+        companyLogo: 'https://th.bing.com/th/id/OIP.t3VdR65XiXTcFCXwyn3eegHaFg?w=288&h=214&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
+        city: 'Kandy',
+        type: 'Full-time',
+        time: '25 days left',
+        aboutCompany: 'AppVenture develops innovative mobile applications for startups and enterprises.',
+        description: 'Looking for Flutter developers with strong skills in cross-platform mobile development. '
+            'The candidate will collaborate with UI/UX designers and backend engineers to deliver high-quality apps. '
+            'Experience in state management, REST APIs, and Firebase is preferred. '
+            'AppVenture provides opportunities to work on diverse projects and grow your career.',
+        reviews: [
+          JobReview(username: 'Jack', rating: 4.6, comment: 'Great projects and excellent team support.'),
+          JobReview(username: 'Karen', rating: 4.5, comment: 'Good learning environment for Flutter developers.'),
+        ],
+      ),
+
+      JobModel(
+        title: 'Data Analyst',
+        salary: 'LKR 170,000 / month',
+        companyName: 'InsightEdge',
+        companyLogo: 'https://th.bing.com/th/id/OIP.Wqm3zxuCRyA48AtAzWIigAHaD_?w=296&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
+        city: 'Colombo 03',
+        type: 'Hybrid',
+        time: '18 days left',
+        aboutCompany: 'InsightEdge provides business intelligence and analytics solutions to enterprises.',
+        description: 'Seeking a data analyst skilled in Python, SQL, and data visualization tools. '
+            'Responsibilities include cleaning and analyzing large datasets, creating reports, and supporting business decisions. '
+            'Ideal candidate has strong problem-solving skills and a keen eye for detail. '
+            'InsightEdge offers flexible working hours and opportunities to learn advanced analytics.',
+        reviews: [
+          JobReview(username: 'Liam', rating: 4.4, comment: 'Good analytical projects and supportive team.'),
+          JobReview(username: 'Mia', rating: 4.3, comment: 'Flexible hours and great mentoring.'),
+        ],
+      ),
     ];
+
+    return jobs;
   }
 }
