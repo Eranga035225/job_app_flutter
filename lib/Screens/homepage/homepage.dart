@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:job_app_flutter/services/get_data.dart';
 
 import 'widgets/app_bar/app_bar.dart';
+import 'widgets/search_bar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -41,45 +42,7 @@ class _HomePageState extends State<HomePage> {
             
                 SizedBox(height: 20),
             
-                Row(
-                  children: [
-                    SizedBox(
-                      width: size.width  * 0.79,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Search For Jobs',
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide.none,
-                          ),
-                          filled: true,
-                          fillColor: Colors.white,
-                          contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                          prefixIcon: Icon(Icons.search, color: Colors.grey),
-                        ),
-                      )
-                    ),
-                    
-                    Spacer(),
-            
-                    Container(
-                      width: 50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        borderRadius: BorderRadius.circular(12)
-            
-            
-                      ),
-                      child: Icon(Icons.filter_list, color: Colors.white,),
-                    ),
-            
-                    
-            
-            
-            
-                  ],
-                ),
+                CustomSearchBar(size: size),
                 SizedBox(height: 10),
             
                 Row(
@@ -212,7 +175,7 @@ class _HomePageState extends State<HomePage> {
 
                           title: Text(job.title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
                           subtitle: Text('${job.companyName} - ${job.city}', style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w600),),
-                          
+                          trailing: Text(job.time, style: TextStyle(fontSize: 12, color: Colors.red, fontWeight: FontWeight.w600),  ),
                           
                         ),
 
