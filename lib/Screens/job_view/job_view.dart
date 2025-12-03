@@ -51,7 +51,7 @@ class _JobViewState extends State<JobView> {
 
           Container(
             width: size.width,
-            height: 200,
+            height: 180,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15))
@@ -63,11 +63,13 @@ class _JobViewState extends State<JobView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(widget.job.title, style:TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
+                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
 
 
                     children: [
+                      
                       Text(widget.job.companyName, style:TextStyle(fontSize: 16, color: Colors.black, ),),
                      
                       Container(
@@ -83,11 +85,30 @@ class _JobViewState extends State<JobView> {
                                               
                                               
                                                        ),
+                      Text(widget.job.salary, style:TextStyle(fontSize: 16, color: Colors.black, ),),
                       
-                      Text(widget.job.time, style:TextStyle(fontSize: 12, color:Colors.red, fontWeight: FontWeight.bold),),
+                      //Text(widget.job.time, style:TextStyle(fontSize: 12, color:Colors.red, fontWeight: FontWeight.bold),),
 
                     ],
-                  )
+                  ),
+                  SizedBox(height: 15),
+                  ListTile(
+                        leading:  Container(
+                                               width: 60,
+                                                      height: 60,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        borderRadius: BorderRadius.circular(10),
+                                                        image: DecorationImage(image: NetworkImage(widget.job.companyLogo), fit: BoxFit.contain)
+                                                        
+                                                      )
+                                                      ),
+                  
+                        title: Text(widget.job.title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+                        subtitle: Text('${widget.job.companyName} - ${widget.job.city}', style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w600),),
+                        trailing: Text(widget.job.time, style: TextStyle(fontSize: 12, color: Colors.red, fontWeight: FontWeight.w600),  ),
+                        
+                      )
                 ],
               
               ),
