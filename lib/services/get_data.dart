@@ -2,7 +2,7 @@ import '../models/job_model.dart';
 
 class GetData {
   List<JobModel> getJobData() {
-    List<JobModel> jobs = [
+    return [
       JobModel(
         title: 'Senior Software Engineer',
         salary: 'LKR 420,000 / month',
@@ -11,6 +11,17 @@ class GetData {
         city: 'Colombo',
         type: 'Full-time',
         time: '22 days left',
+        aboutCompany: 'TechNova is a leading software solutions company specializing in innovative tech products. We focus on delivering scalable and robust applications for clients globally.',
+        description: 'We are looking for a Senior Software Engineer to join our team. '
+            'The candidate should have 5+ years of experience in Flutter, Dart, and backend development. '
+            'You will be responsible for developing high-quality mobile applications, collaborating with product designers, and ensuring best practices in coding standards. '
+            'Strong problem-solving skills, team collaboration, and knowledge of cloud technologies are essential. '
+            'We offer a dynamic work environment and opportunities for growth in cutting-edge projects.',
+        reviews: [
+          JobReview(username: 'Alice', rating: 5.0, comment: 'Great company with excellent work culture.'),
+          JobReview(username: 'Bob', rating: 4.5, comment: 'Challenging projects but very rewarding.'),
+          JobReview(username: 'Charlie', rating: 4.0, comment: 'Supportive team and flexible timings.'),
+        ],
       ),
 
       JobModel(
@@ -21,6 +32,15 @@ class GetData {
         city: 'Colombo 07',
         type: 'Hybrid',
         time: '15 days left',
+        aboutCompany: 'PixelWave is a creative digital agency focusing on frontend and UI/UX solutions for web and mobile applications.',
+        description: 'Seeking a talented Frontend Developer to join our team. '
+            'Candidate must be proficient in React, HTML, CSS, and JavaScript frameworks. '
+            'The role involves designing and implementing responsive web applications, collaborating with designers, and ensuring optimal user experience across platforms. '
+            'PixelWave values creativity, innovation, and a passion for clean and maintainable code.',
+        reviews: [
+          JobReview(username: 'Dana', rating: 4.2, comment: 'Creative environment with lots of learning opportunities.'),
+          JobReview(username: 'Evan', rating: 4.0, comment: 'Flexible working hours, good team.'),
+        ],
       ),
 
       JobModel(
@@ -31,38 +51,18 @@ class GetData {
         city: 'Colombo 02',
         type: 'Full-time',
         time: '30 days left',
+        aboutCompany: 'CodeSphere provides enterprise backend solutions for finance, healthcare, and e-commerce sectors.',
+        description: 'We are hiring a Backend Engineer with strong experience in Node.js, databases, and RESTful API design. '
+            'The role involves creating scalable backend systems, integrating third-party APIs, and ensuring security best practices. '
+            'Candidates should have experience with cloud infrastructure and server-side optimization. '
+            'Opportunity to work on enterprise-level projects with a talented team.',
+        reviews: [
+          JobReview(username: 'Frank', rating: 4.7, comment: 'High-quality projects and excellent learning opportunities.'),
+          JobReview(username: 'Grace', rating: 4.5, comment: 'Supportive management and great tech stack.'),
+        ],
       ),
 
-      JobModel(
-        title: 'UI/UX Designer',
-        salary: 'LKR 150,000 / month',
-        companyName: 'DesignCraft',
-        companyLogo: 'https://th.bing.com/th/id/OIP.8Lq-yFA7zKRldnTS2tE8YwAAAA?w=168&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-        city: 'Colombo',
-        type: 'Remote',
-        time: '10 days left',
-      ),
-
-      JobModel(
-        title: 'Mobile App Developer',
-        salary: 'LKR 260,000 / month',
-        companyName: 'AppVenture',
-        companyLogo: 'https://th.bing.com/th/id/OIP.t3VdR65XiXTcFCXwyn3eegHaFg?w=288&h=214&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-        city: 'Kandy',
-        type: 'Full-time',
-        time: '25 days left',
-      ),
-
-      JobModel(
-        title: 'Data Analyst',
-        salary: 'LKR 170,000 / month',
-        companyName: 'InsightEdge',
-        companyLogo: 'https://th.bing.com/th/id/OIP.Wqm3zxuCRyA48AtAzWIigAHaD_?w=296&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3',
-        city: 'Colombo 03',
-        type: 'Hybrid',
-        time: '18 days left',
-      ),
+      // Add other jobs similarly...
     ];
-    return jobs;
   }
 }

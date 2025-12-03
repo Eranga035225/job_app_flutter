@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/job_model.dart';
 
 class JobView extends StatefulWidget {
-  final JobModel job; // <-- incoming job
+  final JobModel job; 
 
   const JobView({super.key, required this.job});
 
@@ -12,6 +12,8 @@ class JobView extends StatefulWidget {
 }
 
 class _JobViewState extends State<JobView> {
+  final tabButtons =  ["Description", "Company", "Reviews"];
+  int tabIndex = 0;
   
   @override
   Widget build(BuildContext context) {
@@ -65,12 +67,12 @@ class _JobViewState extends State<JobView> {
                   Text(widget.job.title, style:TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
                   
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
 
 
                     children: [
                       
-                      Text(widget.job.companyName, style:TextStyle(fontSize: 16, color: Colors.black, ),),
+                      //Text(widget.job.companyName, style:TextStyle(fontSize: 16, color: Colors.black, ),),
                      
                       Container(
                                                         padding: EdgeInsets.all(5),
@@ -85,13 +87,14 @@ class _JobViewState extends State<JobView> {
                                               
                                               
                                                        ),
-                      Text(widget.job.salary, style:TextStyle(fontSize: 16, color: Colors.black, ),),
+                      SizedBox(width: 20,),
+                      Text(widget.job.salary, style:TextStyle(fontSize: 16, color: Colors.grey.shade700, ),),
                       
                       //Text(widget.job.time, style:TextStyle(fontSize: 12, color:Colors.red, fontWeight: FontWeight.bold),),
 
                     ],
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: 10),
                   ListTile(
                         leading:  Container(
                                                width: 60,
@@ -108,13 +111,137 @@ class _JobViewState extends State<JobView> {
                         subtitle: Text('${widget.job.companyName} - ${widget.job.city}', style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w600),),
                         trailing: Text(widget.job.time, style: TextStyle(fontSize: 12, color: Colors.red, fontWeight: FontWeight.w600),  ),
                         
-                      )
-                ],
+                      ),
+
+                     
+                        
+                      
+
+                ]
+        
               
               ),
             )
 
-          )
+          ),
+          //  SizedBox(height: 5,),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: 
+                       tabButtons.map((e) {
+                          return GestureDetector(
+                            onTap: (){
+                              setState(() {
+                                tabIndex = tabButtons.indexOf(e);
+                              });
+
+                            },
+                            child: Chip(
+                              // labelPadding: EdgeInsets.all(0),
+                              
+                              label: Text(e, style: TextStyle(color: tabIndex == tabButtons.indexOf(e) ? Colors.white : Colors.black,),),
+                              backgroundColor: tabIndex == tabButtons.indexOf(e) ? Colors.black : Colors.white,
+                            ),
+                          );
+                        },).toList()),
+
+
+              tabIndex == 0 ? Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
+                child: Container(
+                  padding: EdgeInsets.all(15),
+                  height: 170,
+                  width: double.maxFinite,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Text(widget.job.description, style: TextStyle(color: Colors.grey.shade600),),
+                ),
+              ) : tabIndex == 1 ?
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
+                child: Container(
+                  padding: EdgeInsets.all(15),
+                  height: 170,
+                  width: double.maxFinite,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Text(widget.job.aboutCompany, style: TextStyle(color: Colors.grey.shade600),),
+                ),
+              ) : 
+                Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
+                    child: Container(
+                      padding: EdgeInsets.all(15),
+                      width: double.maxFinite,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Reviews',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          const SizedBox(height: 10),
+
+                          // List of reviews
+                          Column(
+                            children: widget.job.reviews.map((review) {
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // Username and rating
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          review.username,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                        ),
+                                        Row(
+                                          children: List.generate(5, (index) {
+                                            if (index < review.rating.round()) {
+                                              return Icon(Icons.star, color: Colors.orange, size: 16);
+                                            } else {
+                                              return Icon(Icons.star_border, color: Colors.grey, size: 16);
+                                            }
+                                          }),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(width: 10),
+                                    // Comment
+                                    Expanded(
+                                      child: Text(
+                                        review.comment,
+                                        style: TextStyle(color: Colors.grey.shade700),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+
+
 
 
         
