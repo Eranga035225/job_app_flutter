@@ -209,9 +209,13 @@ class _HomePageState extends State<HomePage> {
                                                           
                                                         )
                                                         ),
+
+                          title: Text(job.title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),),
+                          subtitle: Text('${job.companyName} - ${job.city}', style: TextStyle(fontSize: 14, color: Colors.grey.shade600, fontWeight: FontWeight.w600),),
                           
                           
-                        )
+                        ),
+
                                   
                       ),
                     );
