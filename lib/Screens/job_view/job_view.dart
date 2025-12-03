@@ -42,6 +42,20 @@ class _JobViewState extends State<JobView> {
               
             )
             
+          ),
+
+          Container(
+            width: size.width,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15), bottomRight: Radius.circular(15))
+
+            ),
+            child: Container(
+              
+            )
+
           )
 
 
