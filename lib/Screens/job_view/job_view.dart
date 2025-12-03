@@ -63,7 +63,31 @@ class _JobViewState extends State<JobView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(widget.job.title, style:TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
-              
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+
+                    children: [
+                      Text(widget.job.companyName, style:TextStyle(fontSize: 16, color: Colors.black, ),),
+                     
+                      Container(
+                                                        padding: EdgeInsets.all(5),
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.black,
+                                                          borderRadius: BorderRadius.circular(10)
+                                              
+                                                        ),child: Text(widget.job.type, style: TextStyle(
+                                                          color: Colors.white,
+                                              
+                                                        ))
+                                              
+                                              
+                                                       ),
+                      
+                      Text(widget.job.time, style:TextStyle(fontSize: 12, color:Colors.red, fontWeight: FontWeight.bold),),
+
+                    ],
+                  )
                 ],
               
               ),
